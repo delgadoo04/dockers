@@ -1,0 +1,16 @@
+FROM nginx:latest
+
+# Instalar git
+RUN apt-get update && \ apt-get install -y git && \ rm -rf /var/lib/apt/lists/*
+
+# Clonar repositorio y copiar archivos
+RUN git clone https://github.com/delgadoo04/dockers.git /tmp/repo && \
+    rm -rf /usr/share/nginx/html/* && \
+    cp -r /tmp/repo/proyectos/* /usr/share/nginx/html/ && \
+    rm -rf /tmp/repo
+
+# Exponer puerto 80
+EXPOSE 80
+
+# Comando para mantener nginx corriendo
+CMD ["nginx", "-g", "daemon off;"]
