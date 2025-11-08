@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Dockers</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <h1 id="Proyecto">Proyecto Dockers</h1>
+    <h2>¿Qué es un Docker?</h2>
+    <img src="imagenes/docker.png" alt="Docker" width="100" length="100">
+    <p>Docker es una plataforma de código abierto que permite crear, empaquetar, desplegar y ejecutar aplicaciones 
+        en contenedores. Un contenedor Docker encapsula una aplicación y todas sus dependencias, pero comparte el 
+        kernel con el sistema operativo anfitrión, lo que lo hace muy ligero y eficiente en comparación con las 
+        máquinas virtuales tradicionales. Gracias a Docker, puedes desplegar aplicaciones y servicios de forma rápida,
+         portable y reproducible, optimizando recursos, controlando versiones y facilitando el trabajo en la nube, 
+         en entornos locales o compartiendo imágenes en repositorios públicos o privados.</p>
+    <h2>Requesitos minimos para poder hacer un docker</h2>
+    <table title="Requesitos">
+        <tr>
+            <th>Requisitos generales de hardware</th>
+        </tr>
+        <tr>
+            <th>Procesador:</th>
+            <th>64 bits con soporte de virtualización (Intel VT-x, AMD-V).</th>
+        </tr>
+        <tr>
+            <th>Memoria RAM:</th>
+            <th>Al menos 2 GB para pruebas básicas, pero se recomienda 4 GB o más para un funcionamiento fluido.</th>
+        </tr>
+        <tr>
+            <th>Espacio en disco:</th>
+            <th>10-20 GB libres como mínimo para imágenes y contenedores; más si vas a trabajar con proyectos grandes o muchas imágenes.</th>
+        </tr>
+    </table>
+    <h2>Guia de Comandos basicos</h2>
+    <table border="1">
+  <thead>
+    <tr>
+      <th>Comando</th>
+      <th>Descripción</th>
+      <th>Ejemplo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>docker pull &lt;imagen&gt;</td>
+      <td>Descarga una imagen del registro remoto.</td>
+      <td>docker pull ubuntu:latest</td>
+    </tr>
+    <tr>
+      <td>docker run &lt;opciones&gt; &lt;imagen&gt;</td>
+      <td>Crea y ejecuta un contenedor a partir de una imagen.</td>
+      <td>docker run -it ubuntu /bin/bash</td>
+    </tr>
+    <tr>
+      <td>docker ps</td>
+      <td>Lista los contenedores en ejecución.</td>
+      <td>docker ps</td>
+    </tr>
+    <tr>
+      <td>docker ps -a</td>
+      <td>Lista todos los contenedores (activos y detenidos).</td>
+      <td>docker ps -a</td>
+    </tr>
+    <tr>
+      <td>docker images</td>
+      <td>Muestra las imágenes disponibles localmente.</td>
+      <td>docker images</td>
+    </tr>
+    <tr>
+      <td>docker stop &lt;contenedor&gt;</td>
+      <td>Detiene un contenedor en ejecución.</td>
+      <td>docker stop webserver</td>
+    </tr>
+    <tr>
+      <td>docker rm &lt;contenedor&gt;</td>
+      <td>Elimina un contenedor (debe estar detenido).</td>
+      <td>docker rm webserver</td>
+    </tr>
+    <tr>
+      <td>docker rmi &lt;imagen&gt;</td>
+      <td>Elimina una imagen local.</td>
+      <td>docker rmi ubuntu:latest</td>
+    </tr>
+    <tr>
+      <td>docker exec -it &lt;contenedor&gt; &lt;comando&gt;</td>
+      <td>Ejecuta un comando dentro de un contenedor en ejecución.</td>
+      <td>docker exec -it webserver bash</td>
+    </tr>
+    <tr>
+      <td>docker logs &lt;contenedor&gt;</td>
+      <td>Muestra los logs de salida del contenedor.</td>
+      <td>docker logs webserver</td>
+    </tr>
+    <tr>
+      <td>docker build -t &lt;nombre&gt; &lt;ruta&gt;</td>
+      <td>Construye una imagen desde un Dockerfile.</td>
+      <td>docker build -t miapp .</td>
+    </tr>
+    <tr>
+      <td>docker network ls</td>
+      <td>Lista las redes definidas en Docker.</td>
+      <td>docker network ls</td>
+    </tr>
+    <tr>
+      <td>docker volume ls</td>
+      <td>Lista los volúmenes creados en Docker.</td>
+      <td>docker volume ls</td>
+    </tr>
+    <tr>
+      <td>docker system prune</td>
+      <td>Limpia recursos no usados (contenedores, imágenes, volúmenes).</td>
+      <td>docker system prune</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
